@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Foz keymap",
+  "type": "object",
+  "properties": {
+    "leader": { "type": "string", "default": "<Space>" },
+    "unbind": {
+      "type": "array",
+      "description": "Default bindings to remove, as { mode, keys }",
+      "items": { "type": "object", "required": ["mode", "keys"], "properties": { "mode": { "type": "string" }, "keys": { "type": "string" } } }
+    },
+    "bindings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["mode", "keys", "action"],
+        "properties": {
+          "mode": { "oneOf": [ { "type": "string" }, { "type": "array", "items": { "type": "string" } } ] },
+          "keys": { "type": "string" },
+          "action": { "type": "string" },
+          "arg": {},
+          "desc": { "type": "string" }
+        }
+      }
+    }
+  }
+}
