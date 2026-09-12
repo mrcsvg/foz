@@ -1,0 +1,7 @@
+{
+  "$schema": "./docs/keymap.schema.json",
+  "leader": "<Space>",
+  "bindings": [
+    { "mode": "normal", "keys": "<Leader>q", "action": "escape", "desc": "Example user binding: same as <Esc>" }
+  ]
+}

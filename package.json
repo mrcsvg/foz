@@ -1,0 +1,25 @@
+{
+  "name": "foz",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Foz \u2014 where all your conversations meet. A keyboard-first, vim-modal unified inbox for Slack, Gmail and friends.",
+  "packageManager": "pnpm@10.33.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "pnpm -r --parallel --filter ./apps/* run dev",
+    "build": "pnpm --filter @foz/web run build",
+    "start": "pnpm --filter @foz/server run start",
+    "typecheck": "pnpm -r run typecheck",
+    "test": "vitest run",
+    "foz": "pnpm --filter @foz/server exec tsx src/cli.ts",
+    "e2e": "node scripts/e2e.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8",
+    "playwright": "^1.49.1"
+  }
+}
